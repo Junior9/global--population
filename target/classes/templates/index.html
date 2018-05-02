@@ -1,0 +1,33 @@
+<!DOCTYPE html>	
+<html lang="pt-br" ng-app="iwa-main" >
+
+	<head>
+		<base href="/"></base>
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width"></meta>
+		<title>Example base AngularJS</title>
+		
+		<link rel="stylesheet" href="public/css/bootstrap.min.css"></link>
+	    <link rel="stylesheet" href="public/css/bootstrap-theme.min.css"></link>
+	    
+		<script src="public/js/lib/angular.min.js"></script>  
+	    <script src="public/js/lib/angular-animate.min.js"></script>
+	    <script src="public/js/lib/angular-route.min.js"></script>
+	    <script src="public/js/lib/angular-resource.min.js"></script>
+		<script src="public/js/lib/jquery-3.2.1.min.js"></script>	
+		<script src="public/js/lib/bootstrap.min.js"></script>
+		<script src="public/js/lib/highcharts.js"></script>		
+		
+		<script src="public/js/main.js"></script> 
+		<script src="public/js/controller/home-controller.js"></script>
+		<script src="public/js/service/country-service.js"></script>
+		<script src="public/js/directives/menu.js"></script>
+	</head>
+	
+	<body>
+        <div class="container">
+        	<ng-view></ng-view>
+        </div>               
+    </body>
+
+</html>

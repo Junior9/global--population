@@ -1,0 +1,39 @@
+<nav class="navbar  navbar-inverse ">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+	</div>
+</nav>
+
+<body>
+
+	<div class="row" >
+		<div class="col-md-1"></div>
+		<div class="col-md-4">
+			<input class="form-control" type="text" ng-model="country.name" name="" id="" placeholder="Select the country">	
+		</div>
+	 	<div class="col-md-2">
+		 	<a class="btn btn-primary" ng-click="filterCountry(3)"> Filter </a>
+	 	</div>
+	 	<div class="col-md-2"></div>
+	</div>
+
+	<div class="row" >
+		<div class="col-md-6">
+			<div id="dashboardWorldPopulation"></div>    
+		</div>
+	 	<div class="col-md-6">
+	 		<div id="dashboardWorldPopulationPie"></div>
+	 	</div>
+	</div>
+</body>
+
+<!-- 	 		style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto -->
