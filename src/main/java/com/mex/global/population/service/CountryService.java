@@ -21,20 +21,14 @@ public class CountryService {
 	@Autowired
 	private CountryRepository countryRepository;
 	
-	@Autowired
-	private FileUploadService fileUpload;
-	
 	public DashboardPopulation getAll() {
-		List<Country> countries = fileUpload.mockPopulation();
 		Iterable<Country> countries1 = countryRepository.findAll();
-		
-		
 		Map<String,Integer> mapGlobalPopulation = createMapAllPopulation((List<Country>) countries1);
 		return createDashBoardPopulation(mapGlobalPopulation,"World Population","population");
 	}
 	
 	public DashboardPopulation get(int id) {
-		Country country = fileUpload.mockCountry();
+		Country country = countryRepository.findById(id);
 		Map<String,Integer> mapGlobalPopulation = createMapCountryPopulation(country);
 		return createDashBoardPopulation(mapGlobalPopulation,country.getName(),country.getCode());		
 	}
@@ -90,5 +84,8 @@ public class CountryService {
 		}
 		return mapGlobalPopulation;
 	}
-	
+
+	public Iterable<Country> getBasicAll() {
+		return countryRepository.findAll();
+	}
 }

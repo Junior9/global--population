@@ -18,13 +18,21 @@
 	<div class="row" >
 		<div class="col-md-1"></div>
 		<div class="col-md-4">
+		
+			<select ng-model=country ng-options="country.name for country in countries"></select>
+			
+			<!-- 
 			<input class="form-control" type="text" ng-model="country.name" name="" id="" placeholder="Select the country">	
+			 -->
+			
 		</div>
 	 	<div class="col-md-2">
-		 	<a class="btn btn-primary" ng-click="filterCountry(3)"> Filter </a>
+		 	<a class="btn btn-primary" ng-click="filterCountry(country.id)"> Filter </a>
 	 	</div>
 	 	<div class="col-md-2"></div>
 	</div>
+
+
 
 	<div class="row" >
 		<div class="col-md-6">

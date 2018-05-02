@@ -18,7 +18,6 @@ public class UploadaFileCSV {
 	private static final int FIRST_POSITION_OF_YEARS = 5;
 	private static final int TOTAL_YEARS = 62;
 	
-	
 	public static Country mock(String name,String code, int value){
 		Population population;
 		List<Data> data = new ArrayList<Data>();
@@ -28,21 +27,6 @@ public class UploadaFileCSV {
 		}
 		population = new Population(data);
 		return new Country(name, code, population);
-	}
-	
-	
-	public static List<Country> mockList(){
-		
-		List<Country> list = new ArrayList<Country>();
-		
-		list.add( mock("Brazil", "Br", 1000000000));
-		list.add( mock("Mexico", "Mx", 5000000));
-		list.add( mock("Columbia", "Cl", 30000000));
-		list.add( mock("Estados Unidos", "EUA", 10000000));
-		list.add( mock("Canada", "Ca", 10000000));
-		list.add( mock("Espain", "Sa", 3000000));
-		list.add( mock("China", "Chi", 400000));
-		return list;
 	}
 	
 	public List<Country> uploadFileTotalCountry () {
@@ -57,8 +41,6 @@ public class UploadaFileCSV {
 	    	String countryName = "";	
 	    	String countryCode = "";
 	    	
-	    	int count = 0;
-	    	
 	        while ((line = br.readLine()) != null) {
 	            
 	            try {
@@ -67,30 +49,20 @@ public class UploadaFileCSV {
 	            	countryCode = country[ONE];
 	            	data = new ArrayList<Data>();
 	            	for(int year = FIRST_POSITION_OF_YEARS;year < TOTAL_YEARS;year++) { 
-	            		
-	            		
 	            		if(countryCode.equals("World")) {
 	            			System.out.println();
 	            		}
 	            		data.add(new Data(String.valueOf(START_YEAR + (year - 5) ), Integer.valueOf(  country [year].substring(1,country [year].length()-1 ) )));
-	            	
 	            	}
 	            	countries.add(new Country(countryName,countryCode, new Population(data) ));
 	            }catch(NumberFormatException erro) {
-	            	count++;
 	            	System.out.println("Pais" + countryName);
 	            	erro.printStackTrace();
 	            }
-	            
 	        }
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
 		return countries;
-	}
-
-
-	public static Country mockCountry() {
-		return mock("Brazil", "Br", 1000000000);
 	}
 }

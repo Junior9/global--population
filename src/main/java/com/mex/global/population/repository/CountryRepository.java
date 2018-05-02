@@ -7,5 +7,5 @@ import com.mex.global.population.model.Country;
 
 @Repository
 public interface CountryRepository extends CrudRepository<Country, String> {
-
+	Country findById(int id);
 }
